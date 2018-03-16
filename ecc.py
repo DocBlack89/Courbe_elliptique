@@ -1,5 +1,4 @@
 #coding: utf-8
-# Elliptic curves implementation
 
 """
 Ce qui est fait:
