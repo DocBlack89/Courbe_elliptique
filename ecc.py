@@ -8,8 +8,8 @@ Ce qui est fait:
     - Calcul de la somme de deux points
     - Calcul de n.P
     - Doublement d'un point (fait dans la focntion add)
+    - Calcul de l'opposé d'un point (fais dans la fonction inverse)
 Ce qu'il reste entièrement à faire :
-    - Calcul de l'opposé d'un point
     - méthode simulant l'échange Diffie-Hellman
     - méthode simulant l'envoie de message
 """
