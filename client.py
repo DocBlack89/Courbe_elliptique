@@ -4,3 +4,4 @@ import config
 import ecc
 
 curve = ecc.Curve(config.A, config.B, config.N)
+print(curve)
