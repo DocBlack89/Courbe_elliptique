@@ -50,7 +50,7 @@ Implémenter (Python ou Java):
   
   
   
-#A FAIRE
+######### A FAIRE #########
 
 Reste à faire:
 - méthode simulant l'échange Diffie-Hellman
