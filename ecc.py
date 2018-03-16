@@ -81,8 +81,8 @@ class Curve:
         """
         Somme des deux points
         """
-        assert self.isOn(p)
-        assert self.isOn(q)
+        #assert self.isOn(p)
+        #assert self.isOn(q)
 
         if p.isInf():
             return q.copy()
