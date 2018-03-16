@@ -13,7 +13,7 @@ def inv(x, n):
 
 class Point:
     """
-    Class point, represent a point on the curve
+    Class point, represente un point sur la courbe
     """
     def __init__(self, x, y):
         self.x = x
@@ -39,7 +39,7 @@ class Point:
 
 class PointInf(Point):
     """
-    Special infinity point
+    Le point à l'infini
     """
     def __init__(self):
         Point.__init__(self, None, None)
@@ -50,7 +50,7 @@ class PointInf(Point):
 class Curve:
     def __init__(self, a, b, p):
         """
-        Curve constructor
+        Le constructeur de la courbe
         """
         assert a > 0
         assert b > 0
@@ -62,7 +62,7 @@ class Curve:
 
     def isOn(self, p):
         """
-        Verify if the point is on the curve
+        Vérifier si le point est bien sur la courbe
         """
         if p.isInf():
             return True
@@ -73,7 +73,7 @@ class Curve:
 
     def add(self, p, q):
         """
-        Compute: R = P+Q in E(Fp)
+        Somme des deux points
         """
         assert self.isOn(p)
         assert self.isOn(q)
@@ -104,7 +104,7 @@ class Curve:
 
     def mul(self, n, p):
         """
-        Compute: R = nP in E(Fp)
+        Calcul de n.P (exponentiation rapide)
         """
         assert n >= 0
         assert self.isOn(p)
