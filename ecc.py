@@ -11,6 +11,7 @@ Ce qui est fait:
 Ce qu'il reste entièrement à faire :
     - méthode simulant l'échange Diffie-Hellman
     - méthode simulant l'envoie de message
+    - correction du code pour être en accord avec PEP8
 """
 
 def inv(x, n):
