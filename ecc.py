@@ -6,7 +6,7 @@ Ce qui est fait:
     - vérifier l'appartenance du point à la courbe
     - Calcul de la somme de deux points
     - Calcul de n.P
-    - Doublement d'un point (fait dans la focntion add)
+    - Doublement d'un point (fait dans la fonction add)
     - Calcul de l'opposé d'un point (fais dans la fonction inverse)
 Ce qu'il reste entièrement à faire :
     - méthode simulant l'échange Diffie-Hellman
