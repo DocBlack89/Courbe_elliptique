@@ -1,3 +1,6 @@
+#coding: utf-8
+
+
 # Elliptic curves implementation
 
 def inv(x, n):
@@ -42,7 +45,7 @@ class Point:
 
 class PointInf(Point):
     """
-    Le point à l'infini
+    Le point a l'infini
     """
     def __init__(self):
         Point.__init__(self, None, None)
@@ -124,4 +127,4 @@ class Curve:
         return R
 
     def __str__(self):
-        return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
+        print("Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p))
