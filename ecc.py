@@ -127,4 +127,4 @@ class Curve:
         return R
 
     def __str__(self):
-        print("Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p))
+        return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
