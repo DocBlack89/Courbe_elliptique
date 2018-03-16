@@ -1,6 +1,9 @@
 # Elliptic curves implementation
 
 def inv(x, n):
+    """
+    Calcul de l'inverse
+    """
     assert n > 0
 
     n_tmp = n
