@@ -1,6 +1,7 @@
 # Courbe_elliptique
 Programme python permettant une utilisation simple d'une courbe elliptique
 
+Client.py est le script à exécuter!!!!!
 
 
 TP – Courbes Elliptiques
@@ -46,3 +47,13 @@ Implémenter (Python ou Java):
   
   –Une méthode permettant de simuler l'envoi de messages.
   
+  
+  
+  
+  
+######### A FAIRE #########
+
+Reste à faire:
+- méthode simulant l'échange Diffie-Hellman
+- méthode simulant l'envoie de message
+-correction du code pour être en accord avec PEP8
