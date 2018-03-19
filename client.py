@@ -24,7 +24,7 @@ def menu():
     if (choix == 3):
         doublement_point()
     if (choix == 4):
-        verif_presence()    
+        verif_presence()
     if (choix == 5):
         addition_points
     if (choix == 6):
@@ -78,5 +78,9 @@ def tout():
     #print(inv)
 
 
+<<<<<<< HEAD
 while 1:
     menu()
+=======
+menu()
+>>>>>>> 3ad70e6b0953c18c43b57ed2e0af03ecb761a610

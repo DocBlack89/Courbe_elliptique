@@ -1,4 +1,4 @@
-#coding: utf-8
+# coding: utf-8
 
 """
 Ce qui est fait:
@@ -14,6 +14,7 @@ Ce qu'il reste entièrement à faire :
     - correction du code pour être en accord avec PEP8
 """
 
+
 def inv(x, n):
     """
     Calcul de l'inverse
@@ -26,7 +27,8 @@ def inv(x, n):
         q, x, n = x // n, n, x % n
         x0, x1 = x1, x0 - q * x1
         y0, y1 = y1, y0 - q * y1
-    return  x0 % n_tmp
+    return x0 % n_tmp
+
 
 class Point:
     """
@@ -54,6 +56,7 @@ class Point:
     def isEqual(self, p):
         return self.x == p.x and self.y == p.y
 
+
 class PointInf(Point):
     """
     Le point a l'infini
@@ -63,6 +66,7 @@ class PointInf(Point):
 
     def isInf(self):
         return True
+
 
 class Curve:
     def __init__(self, a, b, p):
@@ -86,7 +90,6 @@ class Curve:
 
         y_square = (p.x**3 + self.a*p.x + self.b) % self.p
         return y_square == p.y**2 % self.p
-
 
     def add(self, p, q):
         """
