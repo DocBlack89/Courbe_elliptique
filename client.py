@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
 import ecc
+import config
 
 def menu():
-    print("######################")
-    print("#  Ceci est un menu  #")
-    print("######################")
+    print("############################")
+    print("#                          #")
+    print("#  Ceci n'est pas un menu  #")
+    print("#                          #")
+    print("############################")
     print("1- Création de la courbe")
     print("2- Multiplication de deux points")
     print("3- Doublement d'un point")
@@ -13,7 +16,7 @@ def menu():
     print("5- Addition de deux points")
     print("6- Calcul de l'inverse")
     print("7- Tout")
-    choix = int(input("Votre choix"))
+    choix = int(input("Votre choix : "))
     if (choix == 1):
         print(creation_courbe())
     if (choix == 2):
@@ -30,75 +33,41 @@ def menu():
         tout()
 
 def creation_courbe():
-    print("Valeur de A")
-    A = int(input())
-    print("Valeur de B")
-    B = int(input())
-    print("Ordre de la courbe")
-    N = int(input())
-    curve = ecc.Curve(A, B, N)
+    curve = ecc.Curve(config.A, config.B, config.N)
     return curve
 
 def multiplication_point():
     curve = creation_courbe()
-    print("Valeur du point")
-    P = int(input())
-    print("Nombre de multiplication")
-    n = int(input())
-    mul = ecc.Curve.mul(curve, n, P)
+    mul = ecc.Curve.mul(curve, config.n, config.P)
     print(mul)
 
 def doublement_point():
     curve = creation_courbe()
-    print("Valeur du point")
-    P = int(input())
-    dbl = ecc.Curve.mul(curve, 2, P)
+    dbl = ecc.Curve.mul(curve, 2, config.P)
     print(dbl)
 
 def verif_presence():
     curve = creation_courbe()
-    print("Valeur du point")
-    P = int(input())
-    isOn = ecc.Curve.isOn(curve, P)
+    isOn = ecc.Curve.isOn(curve, config.P)
     print(isOn)
 
 def addition_points():
     curve = creation_courbe()
-    print("Valeur du point P")
-    P = int(input())
-    print("Valeur du point Q")
-    Q = int(input())
-    add = ecc.Curve.add(curve, P, Q)
+    add = ecc.Curve.add(curve, config.P, config.Q)
     print(add)
 
 def inverse_points():
-    print("Valeur de l'ordre de la courbe")
-    N = int(input())
-    print("Valeur du point P")
-    P = int(input())
-    inv = ecc.inv(N, P)
+    inv = ecc.inv(config.N, config.P)
     print(inv)
 
 def tout():
-    print("Valeur du point A")
-    A = int(input())
-    print("Valeur du point B")
-    B = int(input())
-    print("Valeur du point P")
-    P = int(input())
-    print("Valeur du point Q")
-    Q = int(input())
-    print("Nombre de multiplication")
-    n = int(input())
-    print("Valeur de l'ordre de la courbe")
-    N = int(input())
-    curve = ecc.Curve(A, B, N)
-    isOnP = ecc.Curve.isOn(curve, P)
-    isOnQ = ecc.Curve.isOn(curve, P)
-    add = ecc.Curve.add(curve, P, Q)
-    mul = ecc.Curve.mul(curve, n, Q)
-    dbl = ecc.Curve.mul(curve, 2, Q)
-    inv = ecc.inv(N, P)
+    curve = ecc.Curve(config.A, config.B, config.N)
+    isOnP = ecc.Curve.isOn(curve, config.P)
+    isOnQ = ecc.Curve.isOn(curve, config.P)
+    add = ecc.Curve.add(curve, config.P, config.Q)
+    mul = ecc.Curve.mul(curve, config.n, config.Q)
+    dbl = ecc.Curve.mul(curve, 2, config.Q)
+    #inv = ecc.inv(config.N, config.P)
 
     print(curve)
     print(add)
@@ -106,6 +75,8 @@ def tout():
     print(isOnP)
     print(isOnQ)
     print(dbl)
-    print(inv)
+    #print(inv)
 
-menu()
+
+while 1:
+    menu()
