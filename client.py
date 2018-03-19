@@ -4,10 +4,13 @@ import config
 import ecc
 
 curve = ecc.Curve(config.A, config.B, config.N)
-isOn = ecc.Curve.isOn(curve, config.P)
+isOnP = ecc.Curve.isOn(curve, config.P)
+isOnQ = ecc.Curve.isOn(curve, config.P)
 add = ecc.Curve.add(curve, config.P, config.Q)
-mul = ecc.Curve.mul(curve, config.N, config.P)
+mul = ecc.Curve.mul(curve, config.n, config.Q)
+
 print(curve)
-print(isOn)
 print(add)
 print(mul)
+print(isOnP)
+print(isOnQ)
