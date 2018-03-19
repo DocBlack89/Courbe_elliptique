@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import random()
+import random
 import config
 """
 Ce qui est fait:
@@ -147,9 +147,24 @@ class Curve:
 
 
 class Diffie_Hellman:
-    def Alice():
+    def generation_A(curve):
         a = random.randint(0, config.l-1,)
-        A = mul(a, config.P)
-    def Bob():
+        A = mul(curve, a, config.P)
+        return a, A
+
+    def generation_B(curve):
         b = random.randint(0, config.l-1,)
-        print(b)
+        B = mul(curve, b, config.P)
+        return b, B
+    
+    def Alice(curve):
+        print("récupération de B")
+        a, A = generation_A()
+        b, B = generation_B()
+        aB =  mul(curve, a, B)
+
+    def Bob(curve):
+        print("récupération de A")
+        a, A = generation_A()
+        b, B = generation_B()
+        bA = mul(curve, b, A)
