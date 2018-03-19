@@ -21,7 +21,7 @@ def menu():
     if (choix == 3):
         doublement_point()
     if (choix == 4):
-        verif_presence()    
+        verif_presence()
     if (choix == 5):
         addition_points
     if (choix == 6):
