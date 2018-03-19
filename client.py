@@ -3,6 +3,7 @@
 import ecc
 import config
 
+
 def menu():
     print("############################")
     print("#                          #")
@@ -32,33 +33,40 @@ def menu():
     if (choix == 7):
         tout()
 
+
 def creation_courbe():
     curve = ecc.Curve(config.A, config.B, config.N)
     return curve
+
 
 def multiplication_point():
     curve = creation_courbe()
     mul = ecc.Curve.mul(curve, config.n, config.P)
     print(mul)
 
+
 def doublement_point():
     curve = creation_courbe()
     dbl = ecc.Curve.mul(curve, 2, config.P)
     print(dbl)
+
 
 def verif_presence():
     curve = creation_courbe()
     isOn = ecc.Curve.isOn(curve, config.P)
     print(isOn)
 
+
 def addition_points():
     curve = creation_courbe()
     add = ecc.Curve.add(curve, config.P, config.Q)
     print(add)
 
+
 def inverse_points():
     inv = ecc.inv(config.N, config.P)
     print(inv)
+
 
 def tout():
     curve = ecc.Curve(config.A, config.B, config.N)
@@ -67,7 +75,7 @@ def tout():
     add = ecc.Curve.add(curve, config.P, config.Q)
     mul = ecc.Curve.mul(curve, config.n, config.Q)
     dbl = ecc.Curve.mul(curve, 2, config.Q)
-    #inv = ecc.inv(config.N, config.P)
+    # inv = ecc.inv(config.N, config.P)
 
     print(curve)
     print(add)
@@ -75,12 +83,8 @@ def tout():
     print(isOnP)
     print(isOnQ)
     print(dbl)
-    #print(inv)
+    # print(inv)
 
 
-<<<<<<< HEAD
 while 1:
     menu()
-=======
-menu()
->>>>>>> 3ad70e6b0953c18c43b57ed2e0af03ecb761a610
