@@ -78,9 +78,5 @@ def tout():
     #print(inv)
 
 
-<<<<<<< HEAD
 while 1:
     menu()
-=======
-menu()
->>>>>>> 3ad70e6b0953c18c43b57ed2e0af03ecb761a610
