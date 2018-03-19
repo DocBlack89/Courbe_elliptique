@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import config
 import ecc
 
 def menu():
@@ -15,24 +14,20 @@ def menu():
     print("6- Calcul de l'inverse")
     print("7- Tout")
     choix = int(input("Votre choix"))
-    return choix
-
-choix = menu()
-
-if (choix == 1):
-    creation_courbe()
-if (choix == 2):
-    multiplication_point()
-if (choix == 3):
-    doublement_point()
-if (choix == 4):
-    verif_presence()    
-if (choix == 5):
-    addition_points
-if (choix == 6):
-    inverse_points()
-if (choix == 7):
-    tout()
+    if (choix == 1):
+        print(creation_courbe())
+    if (choix == 2):
+        multiplication_point()
+    if (choix == 3):
+        doublement_point()
+    if (choix == 4):
+        verif_presence()    
+    if (choix == 5):
+        addition_points
+    if (choix == 6):
+        inverse_points()
+    if (choix == 7):
+        tout()
 
 def creation_courbe():
     print("Valeur de A")
@@ -112,3 +107,5 @@ def tout():
     print(isOnQ)
     print(dbl)
     print(inv)
+
+menu()
