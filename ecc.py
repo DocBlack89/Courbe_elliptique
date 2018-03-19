@@ -1,5 +1,7 @@
 # coding: utf-8
 
+import random()
+import config
 """
 Ce qui est fait:
     - Initialisation variable globale (fichier config.py)
@@ -142,3 +144,12 @@ class Curve:
 
     def __str__(self):
         return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
+
+
+class Diffie_Hellman:
+    def Alice():
+        a = random.randint(0, config.l-1,)
+        A = mul(a, config.P)
+    def Bob():
+        b = random.randint(0, config.l-1,)
+        print(b)
