@@ -147,23 +147,23 @@ class Curve:
 
 
 class Diffie_Hellman:
-    def generation_A(curve):
+    def generation_A(self, curve):
         a = random.randint(0, config.l-1,)
         A = mul(curve, a, config.P)
         return a, A
 
-    def generation_B(curve):
+    def generation_B(self, curve):
         b = random.randint(0, config.l-1,)
         B = mul(curve, b, config.P)
         return b, B
     
-    def Alice(curve):
+    def Alice(self, curve):
         print("récupération de B")
-        a, A = generation_A()
-        b, B = generation_B()
+        a = generation_A()
+        B = generation_B()
         aB =  mul(curve, a, B)
 
-    def Bob(curve):
+    def Bob(self, curve):
         print("récupération de A")
         a, A = generation_A()
         b, B = generation_B()
