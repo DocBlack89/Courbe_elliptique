@@ -74,11 +74,19 @@ def inverse_points():
 def tout():
     curve = ecc.Curve(config.A, config.B, config.N)
     isOnP = ecc.Curve.isOn(curve, config.P)
+<<<<<<< HEAD
     #isOnQ = ecc.Curve.isOn(curve, config.P)
     #add = ecc.Curve.add(curve, config.P, config.Q)
     #mul = ecc.Curve.mul(curve, config.n, config.Q)
     dbl = ecc.Curve.mul(curve, 2, config.P)
     #inv = ecc.inv(config.N, config.P)
+=======
+    isOnQ = ecc.Curve.isOn(curve, config.P)
+    add = ecc.Curve.add(curve, config.P, config.Q)
+    mul = ecc.Curve.mul(curve, config.n, config.Q)
+    dbl = ecc.Curve.mul(curve, 2, config.Q)
+    # inv = ecc.inv(config.N, config.P)
+>>>>>>> 754a4a7b3923c6e7f70d5ea4a718f0224373ba61
 
     print(curve)
     #print(add)

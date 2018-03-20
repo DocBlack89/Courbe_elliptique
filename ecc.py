@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import random
+import random()
 import config
 """
 Ce qui est fait:
@@ -145,6 +145,7 @@ class Curve:
     def __str__(self):
         return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
 
+<<<<<<< HEAD
     def generation_A(self):
         a = random.randint(0, config.l-1,)
         A = self.mul(a, config.P)
@@ -168,3 +169,13 @@ class Curve:
         b, B = self.generation_B()
         bA = self.mul(b, A)
         return bA
+=======
+
+class Diffie_Hellman:
+    def Alice():
+        a = random.randint(0, config.l-1,)
+        A = mul(a, config.P)
+    def Bob():
+        b = random.randint(0, config.l-1,)
+        print(b)
+>>>>>>> parent of ef466a2... fin séance
