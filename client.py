@@ -34,8 +34,7 @@ def menu():
     if (choix == 7):
         tout()
     if (choix == 8):
-        Alice()
-        Bob()
+        DH()
 
 
 def creation_courbe():
@@ -89,6 +88,12 @@ def tout():
     print(dbl)
     # print(inv)
 
+def DH():
+    curve = ecc.Curve(config.A, config.B, config.N)
+    Alice = ecc.Curve.Alice(curve)
+    Bob = ecc.Curve.Bob(curve)
+    print(Alice)
+    print(Bob)
 
 while 1:
     menu()

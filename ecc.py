@@ -145,28 +145,26 @@ class Curve:
     def __str__(self):
         return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
 
-
-class Diffie_Hellman:
-    def generation_A(self, curve):
+    def generation_A(self):
         a = random.randint(0, config.l-1,)
-        A = Curve.mul(curve, a, config.P)
+        A = self.mul(a, config.P)
         return a, A
 
-    def generation_B(self, curve):
+    def generation_B(self):
         b = random.randint(0, config.l-1,)
-        B = Curve.mul(curve, b, config.P)
+        B = self.mul(b, config.P)
         return b, B
     
-    def Alice(self, curve):
+    def Alice(self):
         print("récupération de B")
-        a, A = Diffie_Hellman.generation_A(self, curve)
-        b, B = Diffie_Hellman.generation_B(self, curve)
-        aB =  Curve.mul(curve, a, B)
+        a, A = self.generation_A()
+        b, B = self.generation_B()
+        aB =  self.mul(a, B)
         return aB
 
-    def Bob(self, curve):
+    def Bob(self):
         print("récupération de A")
-        a, A = Diffie_Hellman.generation_A(self, curve)
-        b, B = Diffie_Hellman.generation_B(self, curve)
-        bA = Curve.mul(curve, b, A)
+        a, A = self.generation_A()
+        b, B = self.generation_B()
+        bA = self.mul(b, A)
         return bA
