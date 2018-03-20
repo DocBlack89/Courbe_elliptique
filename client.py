@@ -17,6 +17,7 @@ def menu():
     print("5- Addition de deux points")
     print("6- Calcul de l'inverse")
     print("7- Tout")
+    print("8- Diffie-Hellman")
     choix = int(input("Votre choix : "))
     if (choix == 1):
         print(creation_courbe())
@@ -32,6 +33,9 @@ def menu():
         inverse_points()
     if (choix == 7):
         tout()
+    if (choix == 8):
+        Alice()
+        Bob()
 
 
 def creation_courbe():
