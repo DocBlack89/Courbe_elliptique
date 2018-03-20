@@ -1,7 +1,6 @@
 # coding: utf-8
 
-import random()
-import config
+
 """
 Ce qui est fait:
     - Initialisation variable globale (fichier config.py)
@@ -10,8 +9,8 @@ Ce qui est fait:
     - Calcul de n.P
     - Doublement d'un point (fait dans la fonction add)
     - Calcul de l'opposé d'un point (fais dans la fonction inverse)
-Ce qu'il reste entièrement à faire :
     - méthode simulant l'échange Diffie-Hellman
+Ce qu'il reste entièrement à faire :
     - méthode simulant l'envoie de message
     - correction du code pour être en accord avec PEP8
 """
@@ -144,38 +143,3 @@ class Curve:
 
     def __str__(self):
         return "Y^2 = X^3 + (%d)X + (%d) (mod %d)" % (self.a, self.b, self.p)
-
-<<<<<<< HEAD
-    def generation_A(self):
-        a = random.randint(0, config.l-1,)
-        A = self.mul(a, config.P)
-        return a, A
-
-    def generation_B(self):
-        b = random.randint(0, config.l-1,)
-        B = self.mul(b, config.P)
-        return b, B
-    
-    def Alice(self):
-        print("récupération de B")
-        a, A = self.generation_A()
-        b, B = self.generation_B()
-        aB =  self.mul(a, B)
-        return aB
-
-    def Bob(self):
-        print("récupération de A")
-        a, A = self.generation_A()
-        b, B = self.generation_B()
-        bA = self.mul(b, A)
-        return bA
-=======
-
-class Diffie_Hellman:
-    def Alice():
-        a = random.randint(0, config.l-1,)
-        A = mul(a, config.P)
-    def Bob():
-        b = random.randint(0, config.l-1,)
-        print(b)
->>>>>>> parent of ef466a2... fin séance
