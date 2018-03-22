@@ -3,6 +3,8 @@
 import ecc
 import config
 import diffie_hellman
+import chiffrement
+import sys
 
 
 def menu():
@@ -19,6 +21,8 @@ def menu():
     print("6- Calcul de l'inverse")
     print("7- Tout")
     print("8- Diffie-Hellman")
+    print("9- Chiffrement")
+    print("10- Quitter")
     choix = int(input("Votre choix : "))
     if (choix == 1):
         print(creation_courbe())
@@ -36,6 +40,11 @@ def menu():
         tout()
     if (choix == 8):
         DH()
+    if (choix == 9):
+        envoie_message()
+    if (choix == 10):
+        sys.exit()
+    
 
 
 def creation_courbe():
@@ -57,7 +66,7 @@ def doublement_point():
 
 def verif_presence():
     curve = creation_courbe()
-    isOn = ecc.Curve.isOn(curve, config.P)
+    isOn = ecc.Curve.isOn(curve, config.M)
     print(isOn)
 
 
@@ -93,6 +102,11 @@ def DH():
     curve = ecc.Curve(config.A, config.B, config.N)
     Alice = diffie_hellman.Alice(curve)
     print(Alice)
+
+def envoie_message():
+    curve = ecc.Curve(config.A, config.B, config.N)
+    M = chiffrement.dechiffrement_Alice(curve)
+    print(M)
 
 while 1:
     menu()
