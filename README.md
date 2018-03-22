@@ -1,7 +1,7 @@
 # Courbe_elliptique
 Programme python permettant une utilisation simple d'une courbe elliptique
 
-Client.py est le script à exécuter!!!!!
+Client.py est le script à exécuter!
 
 
 TP – Courbes Elliptiques

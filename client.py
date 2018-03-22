@@ -35,7 +35,7 @@ def menu():
     if (choix == 4):
         verif_presence()
     if (choix == 5):
-        addition_points
+        addition_points()
     if (choix == 6):
         tout()
     if (choix == 7):
