@@ -11,7 +11,7 @@ def menu():
     '''
     Menu permettant de choisir ce que l'on souhaite faire
     '''
-    print("############################")
+    print("\n\n############################")
     print("#                          #")
     print("#  Ceci n'est pas un menu  #")
     print("#                          #")
