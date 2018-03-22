@@ -10,9 +10,10 @@ Ce qui est fait:
     - Doublement d'un point (fait dans la fonction add)
     - Calcul de l'opposé d'un point (fais dans la fonction inverse)
     - méthode simulant l'échange Diffie-Hellman
-Ce qu'il reste entièrement à faire :
     - méthode simulant l'envoie de message
+Ce qu'il reste entièrement à faire :
     - correction du code pour être en accord avec PEP8
+
 """
 
 
