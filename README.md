@@ -51,7 +51,6 @@ Implémenter (Python ou Java):
   
   
   
-######### A FAIRE #########
-
+# A FAIRE 
 Reste à faire:
--correction du code pour être en accord avec PEP8
+-Rien
