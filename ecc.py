@@ -37,6 +37,9 @@ class Point:
     Class point, represente un point sur la courbe
     """
     def __init__(self, x, y):
+        """
+        Permet d'initialiser un point sur la courbe avec ces coordonées x et y
+        """
         self.x = x
         self.y = y
 

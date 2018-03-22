@@ -54,6 +54,4 @@ Implémenter (Python ou Java):
 ######### A FAIRE #########
 
 Reste à faire:
-- méthode simulant l'échange Diffie-Hellman
-- méthode simulant l'envoie de message
 -correction du code pour être en accord avec PEP8
