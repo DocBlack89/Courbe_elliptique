@@ -4,6 +4,11 @@ import config
 
 
 def chiffrement_Alice(curve):
+    '''
+    Génère la clé privée d'Alice ainsi que sa clé public
+    La clé privée est enregitrée dans le fichier cle.txt
+    La fonction random n'est pas conseillée en cryptographie
+    '''
     da = random.randint(1, config.l-1)
     A = ecc.Curve.mul(curve, da, config.P)
     f = open("cle.txt", "w")
@@ -12,6 +17,11 @@ def chiffrement_Alice(curve):
 
 
 def chiffrement_Bob(curve):
+    '''
+    Chiffre le message à l'aide de la clé publique d'Alice reçue en appelant la fonction chiffrement_Alice
+    Retourne les points C1 et C2 correspondants au message chiffré
+    La fonction random n'est pas conseillée en cryptographie
+    '''
     A = chiffrement_Alice(curve)
     k = random.randint(1, config.l)
     C1 = ecc.Curve.mul(curve, k, config.P)
@@ -21,6 +31,12 @@ def chiffrement_Bob(curve):
 
 
 def dechiffrement_Alice(curve):
+    '''
+    Alice reçoit C1 et C2
+    elle calcule daC1 grâce à sa clé privée
+    elle calcule l'inverse de daC1
+    elle déchiffre C2 qui correspond à M
+    '''
     C1, C2 = chiffrement_Bob(curve)
     f = open("cle.txt", "r")
     cle = int(f.read())
