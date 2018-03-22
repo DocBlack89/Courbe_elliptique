@@ -11,8 +11,9 @@ Ce qui est fait:
     - Calcul de l'opposé d'un point (fais dans la fonction inverse)
     - méthode simulant l'échange Diffie-Hellman
     - méthode simulant l'envoie de message
+   - correction du code pour être en accord avec PEP8
 Ce qu'il reste entièrement à faire :
-    - correction du code pour être en accord avec PEP8
+    -Rien
 
 """
 

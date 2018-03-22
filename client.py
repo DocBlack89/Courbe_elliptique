@@ -44,7 +44,6 @@ def menu():
         envoie_message()
     if (choix == 10):
         sys.exit()
-    
 
 
 def creation_courbe():
@@ -84,29 +83,32 @@ def inverse_points():
 def tout():
     curve = ecc.Curve(config.A, config.B, config.N)
     isOnP = ecc.Curve.isOn(curve, config.P)
-    #isOnQ = ecc.Curve.isOn(curve, config.P)
-    #add = ecc.Curve.add(curve, config.P, config.Q)
-    #mul = ecc.Curve.mul(curve, config.n, config.Q)
+    # isOnQ = ecc.Curve.isOn(curve, config.P)
+    # add = ecc.Curve.add(curve, config.P, config.Q)
+    # mul = ecc.Curve.mul(curve, config.n, config.Q)
     dbl = ecc.Curve.mul(curve, 2, config.P)
-    #inv = ecc.inv(config.N, config.P)
+    # inv = ecc.inv(config.N, config.P)
 
     print(curve)
-    #print(add)
-    #print(mul)
+    # print(add)
+    # print(mul)
     print(isOnP)
-    #print(isOnQ)
+    # print(isOnQ)
     print(dbl)
     # print(inv)
+
 
 def DH():
     curve = ecc.Curve(config.A, config.B, config.N)
     Alice = diffie_hellman.Alice(curve)
     print(Alice)
 
+
 def envoie_message():
     curve = ecc.Curve(config.A, config.B, config.N)
     M = chiffrement.dechiffrement_Alice(curve)
     print(M)
+
 
 while 1:
     menu()

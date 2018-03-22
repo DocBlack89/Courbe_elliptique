@@ -7,8 +7,9 @@ def Alice(curve):
     a = random.randint(0, config.l-1,)
     A = ecc.Curve.mul(curve, a, config.P)
     B = Bob(curve, A)
-    aB =  ecc.Curve.mul(curve, a, B)
+    aB = ecc.Curve.mul(curve, a, B)
     return aB
+
 
 def Bob(curve, A):
     b = random.randint(0, config.l-1,)

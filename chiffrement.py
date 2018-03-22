@@ -10,10 +10,11 @@ def chiffrement_Alice(curve):
     f.write(str(da))
     return A
 
+
 def chiffrement_Bob(curve):
     A = chiffrement_Alice(curve)
     k = random.randint(1, config.l)
-    C1 = ecc.Curve.mul(curve, k , config.P)
+    C1 = ecc.Curve.mul(curve, k, config.P)
     kA = ecc.Curve.mul(curve, k, A)
     C2 = ecc.Curve.add(curve, config.M, kA)
     return C1, C2
@@ -27,6 +28,3 @@ def dechiffrement_Alice(curve):
     daC1_inv = ecc.Point(daC1.x, -daC1.y)
     M = ecc.Curve.add(curve, C2, daC1_inv)
     return M
-
-
-
