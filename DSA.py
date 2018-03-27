@@ -2,7 +2,6 @@ import config
 import ecc
 import random
 import hashlib
-import math
 
 def gen_cle(curve):
     cle_pri = random.randint(1, config.l-1)
@@ -22,8 +21,10 @@ def Signature_Alice(curve):
         k = random.randint(1, config.l-1)
         kP = ecc.Curve.mul(curve, k, config.P)
         print("kP: ", kP)
-        u = kP.x % config.l
-        v = math.trunc(((hash_int + (cle_pri * u))*(k**-1)) % config.l)
+        u = (kP.x) % config.l
+        v_sans_inv = ((hash_int + (cle_pri * u)))
+        v = ecc.inv(v_sans_inv, config.l)
+        print(v)
     return m,u,v,cle_pub
 
 
@@ -32,8 +33,9 @@ def Verif_signature(curve):
     if (u > 1) and (u < config.l-1) and (v > 1) and (v < config.l-1):
         hashe = hashlib.sha256(m.encode()).hexdigest()
         hash_int = int(hashe, 16)
-        part1 = ((hash_int*(v**-1)) % config.l)
-        part2 = (u*(v**-1))%config.l
+        v_inv = ecc.inv(v, config.l)
+        part1 = ((hash_int*(v_inv)))%config.l
+        part2 = (u*(v_inv))%config.l
         print("Part1 et Part2 calculé")
         part1_add = ecc.Curve.mul(curve, part1, config.P)
         part2_add = ecc.Curve.mul(curve, part2, Q)
@@ -50,12 +52,7 @@ def Verif_signature(curve):
                 if (ecc.Curve.isOn(curve, Q)):
                     print("Q isON")
                     if (ecc.Curve.mul(curve, config.l, Q)==0):
-                        print("ENFIN!!!")
-
-
-
-
-
+                        print("Le message vient bien de Alice!")
 
 curve = ecc.Curve(config.A, config.B, config.N)
 print(Verif_signature(curve))
