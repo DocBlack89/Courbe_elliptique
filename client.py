@@ -5,6 +5,7 @@ import config
 import diffie_hellman
 import chiffrement
 import sys
+import time
 
 
 def menu():
@@ -24,7 +25,7 @@ def menu():
     print("6- Création courbe, multiplication de deux points, doublement de P, addition de deux points")
     print("7- Diffie-Hellman")
     print("8- Chiffrement")
-    print("9- Quitter")
+    print("10- Quitter")
     choix = int(input("Votre choix : "))
     if (choix == 1):
         print(creation_courbe())
@@ -59,7 +60,7 @@ def multiplication_point():
     Multiplie deux point sur une courbe
     '''
     curve = creation_courbe()
-    mul = ecc.Curve.mul(curve, config.n, config.P)
+    mul = ecc.Curve.mul(curve, config.l, config.P)
     print(mul)
 
 
